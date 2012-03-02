@@ -4,3 +4,4 @@ CHANGES NEEDED FOR REGULAR -> SPECIAL
 *  Update /etc/skel/.conkyrc
 *  Update dir_user + '/.config/rox.sourceforge.net/ROX-Filer/pb_swift'
 *  Update '/etc/skel/.config/rox.sourceforge.net/ROX-Filer/pb_swift'
+*  Update /usr/lib/linuxmint/mintConstructor/mintConstructor.py
