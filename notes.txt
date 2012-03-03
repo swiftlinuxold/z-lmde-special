@@ -1,7 +1,11 @@
 CHANGES NEEDED FOR REGULAR -> SPECIAL
 *  Add the new wallpaper to /usr/share/backgrounds/swift
 *  Update /etc/lightdm/lightdm-gtk-greeter.conf
+*  Update dir_user + '/.conkyrc
 *  Update /etc/skel/.conkyrc
 *  Update dir_user + '/.config/rox.sourceforge.net/ROX-Filer/pb_swift'
 *  Update '/etc/skel/.config/rox.sourceforge.net/ROX-Filer/pb_swift'
-*  Update /usr/lib/linuxmint/mintConstructor/mintConstructor.py
+*  Add sound clip
+*  Update dir_user + '/.icewm'
+*  Update '/etc/skel/.icewm'
+*  BUILD PROCESS: Update /usr/lib/linuxmint/mintConstructor/mintConstructor.py
