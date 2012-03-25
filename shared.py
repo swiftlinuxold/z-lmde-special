@@ -69,8 +69,13 @@ def main (abbrev, fullname):
     change_text (filename, '#sound', 'mpg123 /usr/share/sounds/swift/sound-' + abbrev + '.mp3')
     filename = '/etc/skel/.icewm/startup'
     change_text (filename, '#sound', 'mpg123 /usr/share/sounds/swift/sound-' + abbrev + '.mp3')
+    
+# Call this function from this directory with the following Python commands (as root user):
+# import os
+# import shared
+# shared.main ('chi', 'Chicago Swift Linux')
 
-# Call this function with the following Python commands (as root user):
+# Call this function from another directory with the following Python commands (as root user):
 # import sys
 # sys.path.append (dir_develop + '/special')
 # import shared

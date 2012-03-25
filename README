@@ -1,3 +1,20 @@
 This is the repository for creating the special editions of Swift Linux.
 
 Each special edition is regular Swift Linux with an audio clip that plays at startup and special wallpaper for LightDM and the ROX desktop.
+
+PREREQUISITE: You are in your VirtualBox installation of LMDE and have downloaded all of the 
+repositories you need through the ~/develop/1-build/preinstall.sh script.
+
+The steps to create a special edition of Swift Linux on the desktop are:
+1.  Enter the command "sudo sh ~/develop/1-build/desktop-regular.sh".  
+(This transforms LMDE into Regular Swift Linux on your desktop setup.)
+2.  Enter the command "cd ~/develop/special".  (This returns you to this directory.)
+3.  Enter "sudo python".  (This makes you root and gives you a Python command line interface.)
+4.  Enter "import sys".
+5.  Enter "sys.path.append ('/home/(username)/develop/special')".  Because you are the root user,
+the "~" symbol means the root directory instead of your normal user directory.
+6.  The command to enter depends on which special edition of Swift Linux you wish to have:
+Taylor Swift: shared.main ('ts', 'Taylor Swift Linux')
+Minnesota: shared.main ('mn', 'Minnesota Swift Linux')
+Chicago: shared.main ('chi', 'Chicago Swift Linux')
+Silicon Valley: shared.main ('sv', 'Silicon Valley Swift Linux')
