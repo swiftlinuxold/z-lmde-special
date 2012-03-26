@@ -23,6 +23,8 @@ else:
 
 # Everything up to this point is common to all Python scripts called by shared-* scripts
 # ======================================================================================
+print "============================================================="
+print "BEGIN TRANSFORMING REGULAR SWIFT LINUX INTO A SPECIAL EDITION"
 
 abbrev = sys.argv [1]
 fullname = sys.argv [2]
@@ -72,3 +74,9 @@ filename = dir_user + '/.icewm/startup'
 change_text (filename, '#sound', 'mpg123 /usr/share/sounds/swift/sound-' + abbrev + '.mp3')
 filename = '/etc/skel/.icewm/startup'
 change_text (filename, '#sound', 'mpg123 /usr/share/sounds/swift/sound-' + abbrev + '.mp3')
+
+os.system ('python ' + dir_develop + '/final/main.py')
+
+print "FINISHED TRANSFORMING REGULAR SWIFT LINUX INTO A SPECIAL EDITION"
+print "================================================================"
+
