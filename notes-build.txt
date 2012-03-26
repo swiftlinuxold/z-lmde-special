@@ -1,0 +1,20 @@
+
+
+
+
+
+	Make the following changes to /usr/lib/linuxmint/mintConstructor/mintConstructor.py:
+	
+		'regular.iso' -> abbrev + '.iso'
+		
+		'linuxmint-201109-gnome-dvd-32bit' -> 'regular'
+		
+		os.system(self.chrootPrefix + 'sh /usr/local/bin/develop/1-build/shared-regular.sh')
+		
+		'1-build' -> 'temp-' + abbrev
+		
+		shared-regular -> shared-special
+		
+Call $DIR_DEVELOP/temp-special/build.sh function
+
+	Call the $DIR_DEVELOP/temp-diet/remaster.sh function.

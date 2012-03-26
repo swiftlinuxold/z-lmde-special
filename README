@@ -6,15 +6,13 @@ PREREQUISITE: You are in your VirtualBox installation of LMDE and have downloade
 repositories you need through the ~/develop/1-build/preinstall.sh script.
 
 The steps to create a special edition of Swift Linux on the desktop are:
-1.  Enter the command "sudo sh ~/develop/1-build/desktop-regular.sh".  
+1.  If you haven't already done so, enter the command "sudo sh ~/develop/1-build/desktop-regular.sh".  
 (This transforms LMDE into Regular Swift Linux on your desktop setup.)
-2.  Enter the command "cd ~/develop/special".  (This returns you to this directory.)
-3.  Enter "sudo python".  (This makes you root and gives you a Python command line interface.)
-4.  Enter "import sys".
-5.  Enter "sys.path.append ('/home/(username)/develop/special')".  Because you are the root user,
-the "~" symbol means the root directory instead of your normal user directory.
-6.  The command to enter depends on which special edition of Swift Linux you wish to have:
-Taylor Swift: shared.main ('ts', 'Taylor Swift Linux')
-Minnesota: shared.main ('mn', 'Minnesota Swift Linux')
-Chicago: shared.main ('chi', 'Chicago Swift Linux')
-Silicon Valley: shared.main ('sv', 'Silicon Valley Swift Linux')
+2.  Enter the command "sudo python ~/develop/special/shared.py abbrev fullname"
+where abbrev = the abbreviation of the special edition and
+fullname = the full name of the special edition
+
+Taylor Swift: shared.py ('ts', 'Taylor Swift Linux')
+Minnesota: shared.py ('mn', 'Minnesota Swift Linux')
+Chicago: shared.py ('chi', 'Chicago Swift Linux')
+Silicon Valley: shared.py ('sv', 'Silicon Valley Swift Linux')
