@@ -16,17 +16,10 @@ is_chroot = os.path.exists('/home/mint')
 dir_develop=''
 if (is_chroot):
 	dir_develop='/usr/local/bin/develop'
-	dir_user = '/home/mint'
 else:
 	dir_develop='/home/' + uname + '/develop'
-	dir_user = '/home/' + uname
 
-# Everything up to this point is common to all Python scripts called by shared-* scripts
 # ======================================================================================
-
-print "============================================"
-print "BEGIN BUILDING SWIFT LINUX (SPECIAL EDITION)"
-
 abbrev = sys.argv [1]
 fullname = sys.argv [2]
 
@@ -42,6 +35,11 @@ def change_text (filename, text_old, text_new):
     text=open(filename, 'r').read()
     text = text.replace(text_old, text_new)
     open(filename, "w").write(text)
+   
+
+print "============================================"
+print "BEGIN BUILDING SWIFT LINUX (SPECIAL EDITION)"
+
 
 os.system ('mount -t vboxsf guest /mnt/host')
 base_iso = '/mnt/host/regular.iso'
@@ -66,21 +64,19 @@ text_new = 'regular'
 change_text (file_remaster, text_old, text_new)
 text_old = '/usr/local/bin/develop/1-build/shared-regular.py'
 text_new = '/usr/local/bin/develop/special/shared.py '
-text_new = text_new + chr(39) + abbrev + chr(39) + ' '
-text_new = text_new + chr(39) + fullname + chr(39)
+text_new = text_new + chr(34) + abbrev + chr(34) + ' '
+text_new = text_new + chr(34) + fullname + chr(34)
 change_text (file_remaster, text_old, text_new)
 
-# Prepare to save the screen output
-import shutil
+# Prepare to log the output of the remastering script
 dir_output = dir_develop + '/temp-output'
-elim_dir (dir_output)
-create_dir (dir_output)
-file_output = dir_output + '/build-special.txt'
+logfile = dir_output + '/build-' + abbrev + '.txt'
+create_dir (dir_develop + '/temp-output')
 
 # Execute the remastering script
 os.system ('echo EXECUTING THE REMASTERING SCRIPT')
 command_remaster = 'python /usr/lib/linuxmint/mintConstructor/mintConstructor.py '
-command_remaster = command_remaster + '| tee ' + file_output
+# command_remaster = command_remaster + '| tee ' + logfile
 os.system (command_remaster)
 
 # Change ownership of file containing screen output
@@ -89,7 +85,6 @@ os.system (command_chown)
 
 print "FINISHED BUILDING SWIFT LINUX (SPECIAL EDITION)"
 print "==============================================="
-
 
 
 
