@@ -68,15 +68,9 @@ text_new = text_new + chr(34) + abbrev + chr(34) + ' '
 text_new = text_new + chr(34) + fullname + chr(34)
 change_text (file_remaster, text_old, text_new)
 
-# Prepare to log the output of the remastering script
-dir_output = dir_develop + '/temp-output'
-logfile = dir_output + '/build-' + abbrev + '.txt'
-create_dir (dir_develop + '/temp-output')
-
 # Execute the remastering script
 os.system ('echo EXECUTING THE REMASTERING SCRIPT')
 command_remaster = 'python /usr/lib/linuxmint/mintConstructor/mintConstructor.py '
-# command_remaster = command_remaster + '| tee ' + logfile
 os.system (command_remaster)
 
 # Change ownership of file containing screen output
