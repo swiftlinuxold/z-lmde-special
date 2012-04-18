@@ -35,6 +35,9 @@ def change_text (filename, text_old, text_new):
     text = text.replace(text_old, text_new)
     open(filename, "w").write(text)
     
+# Values for Regular Swift Linux
+os.system ('python ' + dir_develop + '/1-build/cosmetic-regular.py')
+
 # Wallpaper
 print "Adding wallpaper"
 src = dir_develop + '/edition-' + abbrev + '/login.jpg'
@@ -43,6 +46,7 @@ os.system ('cp ' + src + ' ' + dest)
 src = dir_develop + '/edition-' + abbrev + '/rox.jpg'
 dest = '/usr/share/backgrounds/swift/rox-' + abbrev + '.jpg'
 os.system ('cp ' + src + ' ' + dest)
+
 # Sound clip
 print "Adding the sound clip"
 dest = '/usr/share/sounds/swift'
@@ -52,28 +56,54 @@ os.system ('mkdir ' + dest)
 src = dir_develop + '/edition-' + abbrev + '/*.mp3'
 dest = '/usr/share/sounds/swift/sound-' + abbrev + '.mp3'
 os.system ('cp ' + src + ' ' + dest)
+
 # LightDM
 print "Changing the LightDM wallpaper"
 filename = '/etc/lightdm/lightdm-gtk-greeter.conf'
 change_text (filename, 'login-regular.jpg', 'login-' + abbrev + '.jpg')
+
 # Conky
 print "Changing Conky"
 filename = dir_user + '/.conkyrc'
 change_text (filename, 'Regular Swift Linux', fullname)
 filename = '/etc/skel/.conkyrc'
 change_text (filename, 'Regular Swift Linux', fullname)
+
 # ROX pinboard
 print "Changing the ROX pinboard wallpaper"
 filename = dir_user + '/.config/rox.sourceforge.net/ROX-Filer/pb_swift'
 change_text (filename, 'rox-regular.jpg', 'rox-' + abbrev + '.jpg')
 filename = '/etc/skel/.config/rox.sourceforge.net/ROX-Filer/pb_swift'
 change_text (filename, 'rox-regular.jpg', 'rox-' + abbrev + '.jpg')
+
 # IceWM startup script
 print "Changing the IceWM startup script"
 filename = dir_user + '/.icewm/startup'
 change_text (filename, '#sound', 'mpg123 /usr/share/sounds/swift/sound-' + abbrev + '.mp3')
 filename = '/etc/skel/.icewm/startup'
 change_text (filename, '#sound', 'mpg123 /usr/share/sounds/swift/sound-' + abbrev + '.mp3')
+
+# Default images for wallpaper wizards
+print "Changing the default images in the wallpaper wizards"
+filename = dir_user + '/.wallpaper/feh-bg.rox-ice'
+change_text (filename, 'rox-regular.jpg', 'rox-' + abbrev + '.jpg')
+filename = '/etc/skel/.wallpaper/feh-bg.rox-ice'
+change_text (filename, 'rox-regular.jpg', 'rox-' + abbrev + '.jpg')
+
+filename = dir_user + '/.wallpaper/feh-bg.rox-jwm'
+change_text (filename, 'rox-regular.jpg', 'rox-' + abbrev + '.jpg')
+filename = '/etc/skel/.wallpaper/feh-bg.rox-jwm'
+change_text (filename, 'rox-regular.jpg', 'rox-' + abbrev + '.jpg')
+
+filename = dir_user + '/.wallpaper/lightdm'
+change_text (filename, 'login-regular.jpg', 'login-' + abbrev + '.jpg')
+filename = '/etc/skel/.wallpaper/lightdm'
+change_text (filename, 'login-regular.jpg', 'login-' + abbrev + '.jpg')
+
+filename = dir_user + '/.wallpaper/saved'
+change_text (filename, 'rox-regular.jpg', 'rox-' + abbrev + '.jpg')
+filename = '/etc/skel/.wallpaper/saved'
+change_text (filename, 'rox-regular.jpg', 'rox-' + abbrev + '.jpg')
 
 os.system ('python ' + dir_develop + '/final/main.py')
 
