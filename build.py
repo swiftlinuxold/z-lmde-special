@@ -59,7 +59,7 @@ file_remaster = '/usr/lib/linuxmint/mintConstructor/mintConstructor.py'
 text_old = 'regular.iso'
 text_new = abbrev + '.iso'
 change_text (file_remaster, text_old, text_new)
-text_old = 'linuxmint-201109-gnome-dvd-32bit'
+text_old = 'linuxmint-201204-mate-cinnamon-dvd-32bit'
 text_new = 'regular'
 change_text (file_remaster, text_old, text_new)
 text_old = '/usr/local/bin/develop/1-build/shared-regular.py'
